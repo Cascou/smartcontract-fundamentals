@@ -1,4 +1,4 @@
-# Sample Hardhat Project
+# Smart Contract Fundamentals
 
 ## Projects Overview
 
@@ -29,3 +29,6 @@
 connected to a liqudity pool, yield farming etc...
 - The fake gains are used to trigger the chainlink automation.
 - It includes a basic contract to read chainlin price feeds.
+---------------------------------------------------------------------------------
+#### Notes
+- This repository is a work in progress, where more complex smart contracts and fundamentals will be added.
