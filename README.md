@@ -21,7 +21,8 @@
 ## Testing
 - The aim of this project was to preform static analysis, unit testing + code coverage, mutation testing.
 - Includes the basic contract ERC20 + ERC1155, basic test & basic results.
-- mutation tests reports were left as is, to show errors. Contracts would need to be ammended for better result. 
+- mutation tests reports were left as is, to show errors. Contracts would need to be ammended for better result.
+- Foundry can be used for fuzz testing. 
 
 ## Vault
 - This is a basic ERC4626 vault smart contract, that uses chainlink automation.
