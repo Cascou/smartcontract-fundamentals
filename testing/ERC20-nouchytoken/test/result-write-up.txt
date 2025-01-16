@@ -1,0 +1,40 @@
+-------------------------------------------------------
+NouchyToken: Write Up
+-------------------------------------------------------
+
+-> Solhint: 
+There were no recommended changes to be made after using Solhint.
+
+-> Prettier:
+The code was refactored to look better after running the prettier plugin.
+
+-> Slither:
+There were some re-entrancy issue noticed for the sellback and withdraw ether function: Fixed.
+There were some version constraint issues with the openzeppelin contracts
+
+{0: Version constraint ^0.8.20 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)      
+        - VerbatimInvalidDeduplication
+        - FullInlinerNonExpressionSplitArgumentEvaluationOrder
+        - MissingSideEffectsOnSelectorAcce
+}
+
+Chose to ignore them.
+
+Low level call in withdrawEther and Sellback i.e. (bool success, ) = msg.sender.call{value: refundAmount}("");
+-> False positives, so ignored
+
+Max Supply constant declared but never used: Fixed by removing.
+
+-> Code Coverage: 97%
+reasons why not 100%, there was a Modifier of owner which I could not bypass with contract.
+
+-> Mutation Testing:
+SuMo generated 192 mutants:
+- 32 live;
+- 142 killed;
+- 18 stillborn;
+- 0 equivalent;
+- 0 redundant;
+- 0 timed-out.
+
+Mutation Score: 81.61 %

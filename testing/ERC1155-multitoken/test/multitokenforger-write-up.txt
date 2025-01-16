@@ -1,0 +1,41 @@
+-------------------------------------------------------
+MultiTokenForger: Write Up
+-------------------------------------------------------
+
+-> Solhint: 
+There were no recommended changes to be made after using Solhint.
+
+-> Prettier:
+The code was refactored to look better after running the prettier plugin.
+
+-> Slither:
+There were some Math.mulDiv errors for @openzeppelin: Ignored.
+There were some version constraint issues with the openzeppelin contracts: Ignored.
+
+{0: Version constraint ^0.8.20 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)      
+        - VerbatimInvalidDeduplication
+        - FullInlinerNonExpressionSplitArgumentEvaluationOrder
+        - MissingSideEffectsOnSelectorAcce
+}
+
+constant lockduration should be LOCK_DURATION: fixed.
+object of Multitoken, should be immutable: fixed.
+
+contains a tautology or contradiction:
+        - tokenId >= 0 && tokenId <= 2 (contracts/MultiTokenForger.sol#18): false positive.
+(fromToken >= 0 && fromToken <= 2 && toToken >= 0 && toToken <= 2 && fromToken != toToken,Incorrect parameters): false positive.
+
+-> Code Coverage:
+I managed to obtain 100%.
+
+-> Mutation Testing:
+Mutation Testing completed in 24.80 minutes 👋
+SuMo generated 271 mutants:
+- 79 live;
+- 183 killed;
+- 9 stillborn;
+- 0 equivalent;
+- 0 redundant;
+- 0 timed-out.
+
+Mutation Score: 69.85 %
