@@ -13,7 +13,7 @@ module.exports = {
   },
   etherscan: {
     apiKey: {
-      holesky: 'PAY2ATH4CDCA9TCTX6HRCAIME86U2I4NI7'
+      holesky: ''
     }
   }
 };
